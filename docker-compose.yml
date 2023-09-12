@@ -3,7 +3,7 @@ version: '3.7'
 services:
   server:
     build:
-      context: ./server
+      context: ./Backend
       dockerfile: Dockerfile
     image: myapp-server
     container_name: myapp-node-server
@@ -15,7 +15,7 @@ services:
       - "5000:5000"
     depends_on:
       - mongo
-    env_file: ./server/.env
+    env_file: ./Backend/.env
     environment:
       - NODE_ENV=development
     networks:
